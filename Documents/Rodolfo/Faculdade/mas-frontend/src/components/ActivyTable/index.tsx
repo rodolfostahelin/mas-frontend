@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {format, parseISO} from 'date-fns';
+import {format, parseISO} from 'date-fns'
 import { Container } from './style';
 import api from '../../services/api';
 
@@ -18,9 +18,9 @@ interface Activy {
 export function ActivyTable() {
 
     const [activies, setActivies] = useState<Activy[]>([])
+   //const [atualiza, setAtualiza] = useState<[]>([])
 
     useEffect(() => {
-
         api.get('/activy')
             .then(response => setActivies(response.data))
     },[])

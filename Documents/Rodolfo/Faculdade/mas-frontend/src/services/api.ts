@@ -1,8 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3334',
-
+  baseURL: process.env.NODE_ENV === 'production' 
+    ?'https://mas-beckend-senai.herokuapp.com'
+    :'http://localhost:3333',
 });
 
 export default api;
